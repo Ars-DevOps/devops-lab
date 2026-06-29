@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVER="ls.com"
+SERVER="google.com"
 LOG="server.log"
 
 ping -c 1 $SERVER > /dev/null 2>&1
