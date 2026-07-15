@@ -24,7 +24,15 @@ jobs:
     steps:
        - name: cat
          run: cat devops-lab/server.log
-         
+       - name: Debug - Find server.log
+         if: always()
+         run: |
+          echo "=== Где я нахожусь? ==="
+          pwd
+          echo "=== Что лежит в этой папке? ==="
+          ls -la
+          echo "=== А есть ли server.log? ==="
+          find . -name "server.log"  
      
 
   
