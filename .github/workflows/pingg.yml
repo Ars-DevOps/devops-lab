@@ -1,0 +1,22 @@
+name: check-storoj
+
+
+
+on: 
+  push: 
+    branches:
+      - main
+
+
+jobs:
+  my_testing:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: test
+        run: ./storoj.sh
+
+  
+      
