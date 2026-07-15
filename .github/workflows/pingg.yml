@@ -14,7 +14,8 @@ jobs:
 
 
     steps:
-      - uses: actions/checkout@v1
+      - name: петух 
+        uses: actions/checkout@v4
       - name: test
         run: ./storoj.sh
 
