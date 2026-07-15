@@ -23,7 +23,7 @@ jobs:
     needs: [my_testing] 
     steps:
        - name: cat
-         run: cat server.log
+         run: cat devops-lab/server.log
          
      
 
