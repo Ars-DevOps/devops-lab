@@ -7,34 +7,20 @@ on:
     branches:
       - main
 
-
 jobs:
-  my_testing:
+  test-watchdog:
     runs-on: ubuntu-latest
-
-
     steps:
-      - name: петух 
+      - name: Get my code   # <-- ВОТ ЭТОТ ШАГ ПЕРВЫЙ
         uses: actions/checkout@v4
-      - name: test
-        run: ./storoj.sh
 
-  server_log:
-    runs-on: ubuntu-latest
-    needs: [my_testing] 
-    steps:
-       - name: cat
-         run: cat devops-lab/server.log
-       - name: Debug - Find server.log
-         if: always()
-         run: |
+      - name: Debug - Find server.log
+        run: |
           echo "=== Где я нахожусь? ==="
           pwd
-          echo "=== Что лежит в этой папке? ==="
           ls -la
-          echo "=== А есть ли server.log? ==="
-          find . -name "server.log"  
-     
+          find . -name "server.log"
+          # … и остальные твои шаги
 
   
       
